@@ -19,12 +19,12 @@ Javaコーディング用のメモ
 
 ## 変数変換
 ### 文字列から数値に変換
-| 変換前の型 | 変換後の型 | メソッド |
-| :--- | :--- | :--- |
-| String | short | Short.parseShort |
-| String | int | Integer.parseInt |
-| String | long | Long.parseLong |
-| String | double | Double.parseDouble |
+| 変換前の型 | 変換後の型 | メソッド | 値 |
+| :--- | :--- | :--- | :--- |
+| String | short | Short.parseShort | 16ビット整数 -32,768～32,767 |
+| String | int | Integer.parseInt | 32ビット整数 -2,147,483,648～2,147,483,647 |
+| String | long | Long.parseLong | 64ビット整数 -9,223,372,036,854,775,808～9,223,372,036,854,775,807 |
+| String | double | Double.parseDouble | 64ビット倍精度浮動小数点数 |
 
 ```Java
 // 文字列の宣言
