@@ -19,6 +19,25 @@ Javaコーディング用のメモ
 
 ## 変数変換
 ### 文字列から数値に変換
+| 変換前の型 | 変換後の型 | メソッド |
+| :--- | :--- | :--- |
+| String | short | Short.parseShort |
+| String | int | Integer.parseInt |
+| String | long | Long.parseLong |
+| String | double | Double.parseDouble |
+
+```Java
+String str_s = "1";
+String str_i = "11";
+String str_l = "111";
+String str_d = "0.1";
+
+// 変換
+short s = Short.parseShort(str_s);
+int i = Integer.parseInt(str_i);
+long l = Long.parseLong(str_l);
+double d = Double.parseDouble(str_d);
+```
 
 
 ## 演算
