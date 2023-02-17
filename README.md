@@ -8,6 +8,8 @@ Javaコーディング用のメモ
   - [数値から文字列に変換](#数値から文字列に変換)
 - [演算](#演算)
   - [演算時の型変換](#演算時の型変換)
+    - [自動変換のルール](#自動変換のルール)
+    - [型を一致させる方法](#型を一致させる方法)
   - [文字列の等号](#文字列の等号)
   - [数字の切り上げ](#数字の切り上げ)
   - [数字の切り捨て](#数字の切り捨て)
@@ -54,7 +56,7 @@ double d = Double.parseDouble(str_d);
 // 整数値の宣言
 int m = 1;
 // 小数点数の宣言
-double n = "0.1";
+double n = 0.1;
 
 // 数値から文字列に変換
 String str_m = String.valueOf(m);
@@ -99,10 +101,35 @@ System.out.println(hello.equals(str_02));   // true
 ```
 
 ### 数字の切り上げ
+Math クラスで用意されている ceil メソッドを使用します。
+```Java
+System.out.println(Math.ceil(1.34));    // 2.0
+System.out.println(Math.ceil(3.67));    // 4.0
+System.out.println(Math.ceil(8.0));     // 8.0
+System.out.println(Math.ceil(-0.23));   // -0.0
+System.out.println(Math.ceil(-3.89));   // -3.0
+```
 
 ### 数字の切り捨て
+Math クラスで用意されている floor メソッドを使用します。
+```Java
+System.out.println(Math.floor(1.34));    // 1.0
+System.out.println(Math.floor(3.67));    // 3.0
+System.out.println(Math.floor(8.0));     // 8.0
+System.out.println(Math.floor(-0.23));   // -1.0
+System.out.println(Math.floor(-3.89));   // -4.0
+```
 
 ### 数字の四捨五入
+Math クラスで用意されている round メソッドを使用します。
+```Java
+System.out.println(Math.round(1.34));    // 1
+System.out.println(Math.round(3.67));    // 4
+System.out.println(Math.round(4.499));   // 4
+System.out.println(Math.round(4.5));     // 5
+System.out.println(Math.round(-0.23));   // 0
+System.out.println(Math.round(-3.89));   // -4
+```
 
 
 ## 配列
