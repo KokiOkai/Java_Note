@@ -83,6 +83,20 @@ int error = 10 * 0.2;
 ```
 
 ### 文字列の等号
+Java で文字列は参照型のため、同じ文字列を参照しているか比較するには == 演算子を使い、<br>
+同じ値を持っているかどうか比較するには String クラスの equals メソッドを使用する。
+
+```Java
+// 文字列の宣言
+String hello = "Hello";
+String str_01 = hello;               // 同じオブジェクト
+String str_02 = new String(hello);   // 異なるオブジェクト
+
+// 出力
+System.out.println(hello == str_01);        // true
+System.out.println(hello == str_02);        // false
+System.out.println(hello.equals(str_02));   // true
+```
 
 ### 数字の切り上げ
 
