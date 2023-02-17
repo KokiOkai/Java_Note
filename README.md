@@ -101,7 +101,7 @@ System.out.println(hello.equals(str_02));   // true
 ```
 
 ### 数字の切り上げ
-Math クラスで用意されている ceil メソッドを使用します。
+Math クラスで用意されている ceil メソッドを使用する。
 ```Java
 System.out.println(Math.ceil(1.34));    // 2.0
 System.out.println(Math.ceil(3.67));    // 4.0
@@ -111,7 +111,7 @@ System.out.println(Math.ceil(-3.89));   // -3.0
 ```
 
 ### 数字の切り捨て
-Math クラスで用意されている floor メソッドを使用します。
+Math クラスで用意されている floor メソッドを使用する。
 ```Java
 System.out.println(Math.floor(1.34));    // 1.0
 System.out.println(Math.floor(3.67));    // 3.0
@@ -121,7 +121,7 @@ System.out.println(Math.floor(-3.89));   // -4.0
 ```
 
 ### 数字の四捨五入
-Math クラスで用意されている round メソッドを使用します。
+Math クラスで用意されている round メソッドを使用する。
 ```Java
 System.out.println(Math.round(1.34));    // 1
 System.out.println(Math.round(3.67));    // 4
