@@ -27,12 +27,13 @@ Javaコーディング用のメモ
 | String | double | Double.parseDouble |
 
 ```Java
+// 文字列の宣言
 String str_s = "1";
 String str_i = "11";
 String str_l = "111";
 String str_d = "0.1";
 
-// 変換
+// 文字列から数値に変換
 short s = Short.parseShort(str_s);
 int i = Integer.parseInt(str_i);
 long l = Long.parseLong(str_l);
