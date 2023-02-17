@@ -75,8 +75,8 @@ String str_n = String.valueOf(n);
 #### 型を一致させる方法
 ```Java
 // 演算例
-double d = 10 * 0.2;      // d = 2.0
-int i = (int)(10 * 0.2)   // i = 2
+double d = 10 * 0.2;       // d = 2.0
+int i = (int)(10 * 0.2);   // i = 2
 
 // 演算のエラー例
 int error = 10 * 0.2;
