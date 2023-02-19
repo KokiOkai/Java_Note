@@ -354,10 +354,9 @@ public class Main {
         System.out.println("削除前:" + list);          // 削除前: [あいうえお, かきくけこ, さしすせそ, あいうえお]
         System.out.println("要素数:" + list.size());   // 要素数: 4
         
-        // インデックス指定での要素の削除 
+        // インスタンス指定での要素の削除 
         list.remove("あいうえお");
         
-        // インスタンス指定での要素の削除 
         System.out.println("削除後:" + list);          // 削除後: [かきくけこ, さしすせそ, あいうえお]
         System.out.println("要素数:" + list.size());   // 要素数: 3
     }
