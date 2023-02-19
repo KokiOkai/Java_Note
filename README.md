@@ -272,8 +272,7 @@ public class Main {
 ```Java
 import java.util.ArrayList; 
 import java.util.List;
- 
- 
+
 public class Main {
     public static void main(String[] args) throws Exception {
         
@@ -292,6 +291,5 @@ public class Main {
     }
 }
 ```
-
 
 ### 要素の削除
