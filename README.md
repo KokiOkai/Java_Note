@@ -21,6 +21,9 @@ Javaコーディング用のメモ
 - [リスト](#リスト)
   - [要素の追加](#要素の追加)
   - [要素の削除](#要素の削除)
+    - [1つの要素を削除する](#1つの要素を削除する) 
+    - [複数の要素を削除する](#複数の要素を削除する)
+    - [範囲を指定して要素を削除する](#範囲を指定して要素を削除する)
 
 
 ## 変数変換
@@ -295,7 +298,7 @@ public class Main {
 ### 要素の削除
 #### 1つの要素を削除する
 List クラスで用意されている remove メソッドを使用する。<br>
-引数としてインデックス、削除する要素(文字列など)を指定することで、リストから指定した要素を削除する。<br>
+引数としてインデックス、削除する要素（文字列など）を指定することで、リストから指定した要素を削除する。<br>
 削除された要素の後に格納されていた要素は、インデックス番号が1つずつずれる。
 
 ```Java
@@ -326,6 +329,33 @@ public class Main {
         
         System.out.println("削除後:" + list);          // 削除後: [あいうえお, さしすせそ]
         System.out.println("要素数:" + list.size());   // 要素数: 2
+    }
+}
+```
+
+削除する要素（文字列など）を指定した場合
+```Java
+import java.util.ArrayList;
+import java.util.List;
+ 
+public class Main {
+    public static void main(String[] args) throws Exception {
+         
+        // 文字列型リストを作成
+        List<String> list = new ArrayList<String>();
+        
+        // リストに要素を追加 
+        list.add("あいうえお"); 
+        list.add("かきくけこ"); 
+        list.add("さしすせそ");
+        list.add("あいうえお");
+        
+        System.out.println("削除前:" + list);          // 削除前: [あいうえお, かきくけこ, さしすせそ, あいうえお]
+        System.out.println("要素数:" + list.size());   // 要素数: 4
+        
+        // インスタンス指定での要素の削除 
+        System.out.println("削除後:" + list);          // 削除後: [かきくけこ, さしすせそ, あいうえお]
+        System.out.println("要素数:" + list.size());   // 要素数: 3
     }
 }
 ```
