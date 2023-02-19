@@ -413,7 +413,7 @@ public class Main {
 
 #### 重複していない要素を削除する
 List クラスで用意されている retainAll メソッドを使用する。<br>
-List型に指定した以外の要素をすべて削除するためのメソッドである。
+List 型に指定した以外の要素をすべて削除するためのメソッドである。
 
 ```Java
 listA.retainAll(listB);
