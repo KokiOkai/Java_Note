@@ -230,5 +230,68 @@ String[] splited = str.split("");
 
 ## リスト
 ### 要素の追加
+List クラスで用意されている add メソッドを使用する。<br>
+1つの値をリストの要素としてに追加するメソッドである。<br>
+第一引数をインデックス、第二引数を追加する値として指定することで、リストに要素を追加する。
+
+```Java
+list.add(インデックス, 追加する要素);
+```
+
+リストの最後に要素を追加する場合（第一引数を指定しない場合）
+```Java
+import java.util.ArrayList; 
+import java.util.List;
+ 
+public class Main {
+    public static void main(String[] args) throws Exception {
+        
+       // 文字列型リストを作成
+       List<String> listA = new ArrayList<String>(); 
+       
+       // リストの最後に要素を追加 
+       listA.add("あいうえお"); 
+       listA.add("かきくけこ");
+       listA.add("さしすせそ");
+       System.out.println("要素追加後A:" + listA);   // 要素追加後A: [あいうえお, かきくけこ, さしすせそ]
+       
+       
+       // 整数型リストを作成 
+       List<Integer> listB = new ArrayList<Integer>(); 
+       
+       // リストの最後に要素を追加 
+       listB.add(1); 
+       listB.add(2);
+       listB.add(3);
+       System.out.println("要素追加後B:" + listB);   // 要素追加後B: [1, 2, 3]
+    }
+}
+```
+
+インデックスを指定してリストに要素を追加する場合
+```Java
+import java.util.ArrayList; 
+import java.util.List;
+ 
+ 
+public class Main {
+    public static void main(String[] args) throws Exception {
+        
+       // 文字列型リストを作成 
+       List<String> listA = new ArrayList<String>(); 
+       
+       // リストの最後に要素を追加 
+       listA.add("あいうえお"); 
+       listA.add("かきくけこ");
+       listA.add("さしすせそ");
+       System.out.println("要素追加後A:" + listA);   // 要素追加後A: [あいうえお, かきくけこ, さしすせそ]
+          
+       // インデックスを指定して要素を追加 
+       listA.add(1, "わをん"); 
+       System.out.println("要素追加後A:" + listA);   // 要素追加後A: [あいうえお, わをん, かきくけこ, さしすせそ]
+    }
+}
+```
+
 
 ### 要素の削除
