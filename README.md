@@ -22,7 +22,7 @@ Javaコーディング用のメモ
   - [要素の追加](#要素の追加)
   - [要素の削除](#要素の削除)
     - [1つの要素を削除する](#1つの要素を削除する) 
-    - [複数の要素を削除する](#複数の要素を削除する)
+    - [複数の要素を削除する（重複している要素の削除）](#複数の要素を削除する（重複している要素の削除）)
     - [範囲を指定して要素を削除する](#範囲を指定して要素を削除する)
 
 
@@ -364,13 +364,50 @@ public class Main {
 ```
 指定したインスタンスが複数ある場合は、最初の1つ目の要素が削除されるが、2つ目の要素は削除されない。
 
-#### 複数の要素を削除する
+#### 複数の要素を削除する（重複している要素の削除）
 List クラスで用意されている removeAll メソッドを使用する。<br>
 List 型に指定した要素をすべて削除するためのメソッドである。
 
-```Java	
+```Java
 listA.removeAll(listB);
 ```
 removeAllの引数で、削除したい要素が入ったリスト（listB）指定することで、listAと重複している要素を削除することができる。
+
+```Java
+import java.util.ArrayList;
+import java.util.List;
+ 
+public class Main {
+    public static void main(String[] args) throws Exception {
+        
+        // 文字列型リストを作成
+        List<String> listA = new ArrayList<String>();
+        
+        // リストに要素を追加 
+        listA.add("あいうえお"); 
+        listA.add("かきくけこ"); 
+        listA.add("さしすせそ");
+        listA.add("かきくけこ");
+        listA.add("さしすせそ");
+        
+        // 削除したい要素を格納する文字列型リストを作成
+        List<String> listB = new ArrayList<String>();
+        
+        // リストに削除したい要素を追加
+        listB.add("かきくけこ"); 
+        listB.add("がぎぐげご"); 
+        listB.add("さしすせそ"); 
+        listB.add("ざじずぜぞ");
+        
+        System.out.println("削除前:" + listA);            // 削除前: [あいうえお, かきくけこ, さしすせそ, かきくけこ, さしすせそ]
+        System.out.println("削除したいリスト:" + listB);   // 削除したいリスト: [かきくけこ, がぎぐげご, さしすせそ, ざじずぜぞ]
+        
+        // listA の要素のうち listB にもあるものを削除 
+        boolean result = listA.removeAll(listB);
+        
+        System.out.println("削除後:" + listA);   // 削除後: [あいうえお]
+    }
+}
+```
 
 #### 範囲を指定して要素を削除する
