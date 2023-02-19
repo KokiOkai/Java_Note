@@ -24,6 +24,7 @@ Javaコーディング用のメモ
     - [1つの要素を削除する](#1つの要素を削除する) 
     - [複数の要素を削除する（重複している要素の削除）](#複数の要素を削除する重複している要素の削除)
     - [重複していない要素を削除する](#重複していない要素を削除する)
+    - [条件付きで要素を削除する](#条件付きで要素を削除する)
     - [範囲を指定して要素を削除する](#範囲を指定して要素を削除する)
 
 
@@ -453,6 +454,35 @@ public class Main {
         listA.retainAll(listB);
         
         System.out.println("削除後:" + listA);   // 削除後: [かきくけこ, さしすせそ]
+    }
+}
+```
+
+#### 条件付きで要素を削除する
+List クラスで用意されている removeIf メソッドを使用する。<br>
+ラムダ式で記述した、引数として渡された条件でリストの要素を削除する。
+
+```Java
+import java.util.ArrayList;
+import java.util.List;
+ 
+public class Main {
+    public static void main(String[] args) throws Exception {
+           
+        // 文字列型リストを作成
+        List<String> list = new ArrayList<String>();
+        
+        // リストに要素を追加 
+        list.add("あいうえお"); 
+        list.add("かきくけこ"); 
+        list.add("さしすせそ");
+        
+        System.out.println("削除前:" + list);   // 削除前: [あいうえお, かきくけこ, さしすせそ]
+        
+        // 条件付きでの要素の削除 
+        list.removeIf(element -> element.startsWith("か"));
+        
+        System.out.println("削除後:" + list);   // 削除後: [あいうえお, さしすせそ]
     }
 }
 ```
