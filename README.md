@@ -23,6 +23,7 @@ Javaコーディング用のメモ
   - [要素の削除](#要素の削除)
     - [1つの要素を削除する](#1つの要素を削除する) 
     - [複数の要素を削除する（重複している要素の削除）](#複数の要素を削除する重複している要素の削除)
+    - [重複していない要素を削除する](#重複していない要素を削除する)
     - [範囲を指定して要素を削除する](#範囲を指定して要素を削除する)
 
 
@@ -371,7 +372,7 @@ List 型に指定した要素をすべて削除するためのメソッドであ
 ```Java
 listA.removeAll(listB);
 ```
-removeAllの引数で、削除したい要素が入ったリスト（listB）指定することで、listAと重複している要素を削除することができる。
+removeAll の引数で、削除したい要素が入ったリスト（listB）指定することで、listA と重複している要素を削除することができる。
 
 ```Java
 import java.util.ArrayList;
@@ -403,9 +404,56 @@ public class Main {
         System.out.println("削除したいリスト:" + listB);   // 削除したいリスト: [かきくけこ, がぎぐげご, さしすせそ, ざじずぜぞ]
         
         // listA の要素のうち listB にもあるものを削除 
-        boolean result = listA.removeAll(listB);
+        listA.removeAll(listB);
         
         System.out.println("削除後:" + listA);   // 削除後: [あいうえお]
+    }
+}
+```
+
+#### 重複していない要素を削除する
+List クラスで用意されている retainAll メソッドを使用する。<br>
+List型に指定した以外の要素をすべて削除するためのメソッドである。
+
+```Java
+listA.retainAll(listB);
+```
+
+retainAll の引数で、削除対象外の要素が入ったリスト（ListB）を指定することで、ListA と重複していない要素を削除することができる。<br>
+retainAll メソッドは「A」と「a」のように、大文字と小文字の同じ意味である場合も重複していないと判断して削除する。
+
+```Java
+import java.util.ArrayList;
+import java.util.List;
+ 
+public class Main {
+    public static void main(String[] args) throws Exception {
+        
+        // 文字列型リストを作成
+        List<String> listA = new ArrayList<String>();
+        
+        // リストに要素を追加 
+        listA.add("あいうえお"); 
+        listA.add("かきくけこ"); 
+        listA.add("さしすせそ");
+        listA.add("たちつてと");
+        
+        // 削除対象外の要素を格納する文字列型リストを作成
+        List<String> listB = new ArrayList<String>();
+        
+        // リストに要素を追加
+        listB.add("かきくけこ"); 
+        listB.add("がぎぐげご"); 
+        listB.add("さしすせそ"); 
+        listB.add("ざじずぜぞ");
+        
+        System.out.println("削除前:" + listA);              // 削除前: [あいうえお, かきくけこ, さしすせそ, たちつてと]
+        System.out.println("削除対象外のリスト:" + listB);   // 削除対象外のリスト: [かきくけこ, がぎぐげご, さしすせそ, ざじずぜぞ]
+        
+        // listA の要素のうち listB にないものを削除 
+        listA.retainAll(listB);
+        
+        System.out.println("削除後:" + listA);   // 削除後: [かきくけこ, さしすせそ]
     }
 }
 ```
