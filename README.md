@@ -230,6 +230,40 @@ String[] splited = str.split("");
 ```
 
 ### 重複
+Set クラスで用意されている HashSet メソッドを使用する。<br>
+Set クラスは、List クラスと同じように大きさを決めない配列のようなものである。<br>
+List クラスは同じ値を持つことができますが、Set クラスは同じ値を持つことはできない。<br>
+この特徴を活かして、重複を確認する。
+
+```Java
+import java.util.HashSet;
+import java.util.Set;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+
+        // 整列型配列の宣言
+        int num[] = {1, 2, 3, 4, 5, 6, 1, 7, 8, 9, 1, 6};
+        
+        // 重複確認用のセットを作成
+        Set<Integer> set = new HashSet<Integer>();
+        
+        for(int duplicateCheck : num) {
+            // setに追加してみて、追加できなかった（重複していた）場合
+            if(!set.add(duplicateCheck)) {
+                System.out.println(duplicateCheck + "が重複しています。");
+            }
+        }
+    }
+}
+
+/*
+出力結果
+1が重複しています。
+1が重複しています。
+6が重複しています。
+*/
+```
 
 
 ## リスト
