@@ -526,7 +526,7 @@ public class Main {
 ## Atcoder
 ### 標準入力
 <img src="https://user-images.githubusercontent.com/105481222/225970260-4a00590d-91f0-4bdd-b362-7bc59e3f8e81.jpg" width="20%">
-<img src="https://user-images.githubusercontent.com/105481222/225971011-baca69fc-a3cf-4ce9-823a-dce1d1a23259.jpg" width="5%">
+<img src="https://user-images.githubusercontent.com/105481222/225971011-baca69fc-a3cf-4ce9-823a-dce1d1a23259.jpg" width="10%">
 
 ```Java
 import java.util.*;
