@@ -25,6 +25,8 @@ Javaコーディング用のメモ
     - [複数の要素を削除する（重複している要素の削除）](#複数の要素を削除する重複している要素の削除)
     - [重複していない要素を削除する](#重複していない要素を削除する)
     - [条件付きで要素を削除する](#条件付きで要素を削除する)
+- [Atcoder](#Atcoder)
+  - [標準入力](#標準入力)
 
 
 ## 変数変換
@@ -516,6 +518,32 @@ public class Main {
         list.removeIf(element -> element.startsWith("か"));
         
         System.out.println("削除後:" + list);   // 削除後: [あいうえお, さしすせそ]
+    }
+}
+```
+
+
+## Atcoder
+### 標準入力
+<img src="https://user-images.githubusercontent.com/105481222/225970260-4a00590d-91f0-4bdd-b362-7bc59e3f8e81.jpg" width="30%">
+
+```Java
+import java.util.*;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        Scanner scan = new Scanner(System.in);
+        
+        // 入力
+        int H = scan.nextInt();
+        int W = scan.nextInt();
+        int[][] array = new int[H][W];
+        for (int i = 0; i < H; i++) {
+            for (int j = 0; j < W; j++) {
+                array[i][j] = scan.nextInt();
+            } 
+        }
     }
 }
 ```
