@@ -6,6 +6,7 @@ Javaコーディング用のメモ
 - [変数変換](#変数変換)
   - [文字列から数値に変換](#文字列から数値に変換)
   - [数値から文字列に変換](#数値から文字列に変換)
+  - [10進数をn進数表記にする](#10進数をn進数表記にする)
 - [演算](#演算)
   - [演算時の型変換](#演算時の型変換)
     - [自動変換のルール](#自動変換のルール)
@@ -70,6 +71,32 @@ double n = 0.1;
 // 数値から文字列に変換
 String str_m = String.valueOf(m);
 String str_n = String.valueOf(n);
+```
+
+### 10進数をn進数表記にする
+| 説明 | 戻り値の型 | メソッド |
+| :--- | :--- | :--- |
+| 数値iを2進数表記の文字列で返す | String | Integer.toBinaryString(i) |
+| 数値iを8進数表記の文字列で返す | String | Integer.toOctalString(i) |
+| 数値iを16進数表記の文字列で返す | String | Integer.toHexString(i) |
+
+```Java
+// 入力
+int i = 127;
+
+// int値をn進数表記に変換する
+System.out.println("10進数：" + i);
+System.out.println("2進数：" + Integer.toBinaryString(i));
+System.out.println("8進数：" + Integer.toOctalString(i));
+System.out.println("16進数：" + Integer.toHexString(i));
+
+/*
+出力結果
+10進数：127
+2進数：1111111
+8進数：177
+16進数：7f
+*/
 ```
 
 
