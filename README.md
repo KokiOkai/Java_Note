@@ -76,9 +76,9 @@ String str_n = String.valueOf(n);
 ### 10進数をn進数表記にする
 | 説明 | 戻り値の型 | メソッド |
 | :--- | :--- | :--- |
-| 数値iを2進数表記の文字列で返す | String | Integer.toBinaryString(i) |
-| 数値iを8進数表記の文字列で返す | String | Integer.toOctalString(i) |
-| 数値iを16進数表記の文字列で返す | String | Integer.toHexString(i) |
+| 数値 i を2進数表記の文字列で返す | String | Integer.toBinaryString(i) |
+| 数値 i を8進数表記の文字列で返す | String | Integer.toOctalString(i) |
+| 数値 i を16進数表記の文字列で返す | String | Integer.toHexString(i) |
 
 ```Java
 // 入力
