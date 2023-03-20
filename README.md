@@ -30,6 +30,7 @@ Javaコーディング用のメモ
   - [標準入力](#標準入力)
 - [Track](#Track)
   - [標準入力例](#標準入力例)
+  - [標準入力の取得](#標準入力の取得)
 
 
 ## 変数変換
@@ -612,6 +613,7 @@ public class App {
 }
 ```
 
+### 標準入力の取得
 ```Java
 import java.util.*;
 import java.util.Scanner;
