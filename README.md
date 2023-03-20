@@ -628,8 +628,9 @@ public class Main {
         
         // 標準入力の取得
         int n = Integer.parseInt(lines[0]);
+        // 文字列配列として取得
         String[] str = lines[1].split(" ");
-        // 整数に変換
+        // 整数配列に変換
         int[] array = new int[n];
         for (int i = 0; i < n; i++) {
             array[i] = Integer.parseInt(str[i]);
