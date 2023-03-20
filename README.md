@@ -29,7 +29,7 @@ Javaコーディング用のメモ
 - [Atcoder](#Atcoder)
   - [標準入力](#標準入力)
 - [Track](#Track)
-  - [標準入力](#標準入力)
+  - [標準入力例](#標準入力)
 
 
 ## 変数変換
@@ -580,7 +580,7 @@ public class Main {
 
 
 ## Track
-### 標準入力
+### 標準入力例
 ```Java
 package track;
 import java.util.Scanner;
@@ -609,4 +609,5 @@ public class App {
     }
     return lines.toArray(new String[lines.size()]);
   }
+}
 ```
