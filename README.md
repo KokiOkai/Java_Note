@@ -611,3 +611,35 @@ public class App {
   }
 }
 ```
+
+```Java
+import java.util.*;
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        Scanner scan = new Scanner(System.in);
+        
+        // 標準入力
+        String[] lines = {"3", "3 1 5"};
+        
+        // 標準入力の取得
+        int n = Integer.parseInt(lines[0]);
+        String[] str = lines[1].split(" ");
+        // 整数に変換
+        int[] array = new int[n];
+        for (int i = 0; i < n; i++) {
+            array[i] = Integer.parseInt(str[i]);
+        }
+            
+        // 確認
+        System.out.println(n);
+        String answer = "";
+        for (int i = 0; i < n; i++) {
+            answer += array[i] + " ";
+        }
+        System.out.println(answer);
+    }
+}
+```
