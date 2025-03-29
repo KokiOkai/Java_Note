@@ -671,3 +671,81 @@ public class Main {
     }
 }
 ```
+
+## Atcoderメモ
+### 問題1
+```Java
+import java.util.*;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        Scanner scan = new Scanner(System.in);
+        
+        ArrayList<String> list_S = new ArrayList<String>();
+        ArrayList<String> list_T = new ArrayList<String>();
+        
+        // 入力
+        int N = scan.nextInt();
+        String S = scan.next();
+        String T = scan.next();
+        
+        // 重複数の合計
+        int count = 0;
+        
+        // 文を一文字ずつlistに詰める
+        for (int i = 1; i <= N; i++) {
+            list_S.add(S.substring(i - 1, i));
+            list_T.add(T.substring(i - 1, i));
+        }
+        
+        // listを0番から順番に抜出し等しければcountにプラス１
+        for (int i = 0; i < N; i++) {
+            if (list_S.get(i).equals(list_T.get(i))){
+                count++;
+            }
+        }
+        
+        // 出力
+        System.out.println(N - count);
+    }
+}
+```
+### 問題2
+```Java
+import java.util.*;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        Scanner scan = new Scanner(System.in);
+        
+        ArrayList<String> list_S = new ArrayList<String>();
+        ArrayList<String> list_T = new ArrayList<String>();
+        
+        // 入力
+        int N = scan.nextInt();
+        String S = scan.next();
+        String T = scan.next();
+        
+        // 重複数の合計
+        int count = 0;
+        
+        // 文を一文字ずつlistに詰める
+        for (int i = 1; i <= N; i++) {
+            list_S.add(S.substring(i - 1, i));
+            list_T.add(T.substring(i - 1, i));
+        }
+        
+        // listを0番から順番に抜出し等しければcountにプラス１
+        for (int i = 0; i < N; i++) {
+            if (list_S.get(i).equals(list_T.get(i))){
+                count++;
+            }
+        }
+        
+        // 出力
+        System.out.println(N - count);
+    }
+}
+```
