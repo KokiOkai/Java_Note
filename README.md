@@ -572,6 +572,55 @@ public class Main {
 
 ## Atcoder
 ### 標準入力
+#### 数字
+```Java
+import java.util.*;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        Scanner scan = new Scanner(System.in);
+
+        // 整数型リストを作成
+        ArrayList<Integer> list_P = new ArrayList<Integer>();
+        
+        // 入力
+        int N = scan.nextInt();
+        for (int i = 0; i < N; i++) {
+            list_P.add(scan.nextInt());
+        }
+    }
+}
+```
+
+#### 文字列
+```Java
+import java.util.*;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        Scanner scan = new Scanner(System.in);
+        
+        // 入力
+        int N = scan.nextInt();
+        String S = scan.next();
+        String T = scan.next();
+
+        // 文字列型リストを作成
+        ArrayList<String> list_S = new ArrayList<String>();
+        ArrayList<String> list_T = new ArrayList<String>();
+
+        // 文字列を一文字ずつリストに詰める
+        for (int i = 1; i <= N; i++) {
+            list_S.add(S.substring(i - 1, i));
+            list_T.add(T.substring(i - 1, i));
+        }
+    }
+}
+```
+
+#### 二次元配列
 <img src="https://user-images.githubusercontent.com/105481222/225970260-4a00590d-91f0-4bdd-b362-7bc59e3f8e81.jpg" width="20%">
 <img src="https://user-images.githubusercontent.com/105481222/225971011-baca69fc-a3cf-4ce9-823a-dce1d1a23259.jpg" width="10%">
 
@@ -715,37 +764,63 @@ public class Main {
 ```Java
 import java.util.*;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
         
-        ArrayList<String> list_S = new ArrayList<String>();
-        ArrayList<String> list_T = new ArrayList<String>();
+        ArrayList<Integer> list_P = new ArrayList<Integer>();
+        ArrayList<Integer> list_N = new ArrayList<Integer>();
+        
+        ArrayList<Integer> list_PP = new ArrayList<Integer>();
         
         // 入力
         int N = scan.nextInt();
-        String S = scan.next();
-        String T = scan.next();
-        
-        // 重複数の合計
-        int count = 0;
-        
-        // 文を一文字ずつlistに詰める
-        for (int i = 1; i <= N; i++) {
-            list_S.add(S.substring(i - 1, i));
-            list_T.add(T.substring(i - 1, i));
-        }
-        
-        // listを0番から順番に抜出し等しければcountにプラス１
         for (int i = 0; i < N; i++) {
-            if (list_S.get(i).equals(list_T.get(i))){
-                count++;
-            }
+            list_P.add(scan.nextInt());
+            list_N.add(0);
         }
+        list_PP = new ArrayList<>(list_P);
         
+        // 変数
+        int r = 1;
+        int count = 0;
+        int Rest = N;
+        
+        // 処理
+        do {
+            // count初期化
+            count = 0;
+            // 最大値の取得
+            int max = Collections.max(list_PP);
+            
+            // 最大値の人を順位付け
+            for (int j = 0; j < N; j++) {
+                if (list_P.get(j).equals(max)) {
+                    // 順位付け
+                    list_N.set(j, r);
+                    // 残り人数更新
+                    Rest = Rest - 1;
+                    // カウント
+                    count++;
+                }
+            }
+            //削除に使うリスト型の宣言
+            List<Integer> set = new ArrayList<Integer>();
+            set.add(max);
+            // 要素削除
+            list_PP.removeAll(set);
+            // rの更新
+            r = r + count;
+        } while (Rest > 0);
+
         // 出力
-        System.out.println(N - count);
+        for (int i = 0; i < N; i++) {
+            System.out.println(list_N.get(i));
+        }
     }
 }
 ```
