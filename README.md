@@ -409,9 +409,9 @@ public class Main {
        
        
        // リストの最後に要素を追加 
-       listB.set(0, わ); 
-       listB.set(1, を);
-       listB.set(2, ん);
+       listA.set(0, "わ"); 
+       listA.set(1, "を");
+       listA.set(2, "ん");
        System.out.println("要素置換後A:" + listA);   // 要素置換後A: [わ, を, ん]
     }
 }
