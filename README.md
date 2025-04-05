@@ -29,6 +29,7 @@ Javaコーディング用のメモ
     - [複数の要素を削除する（重複している要素の削除）](#複数の要素を削除する重複している要素の削除)
     - [重複していない要素を削除する](#重複していない要素を削除する)
     - [条件付きで要素を削除する](#条件付きで要素を削除する)
+  - [要素の検索](#要素の検索)
 - [Atcoder](#Atcoder)
   - [標準入力例（数字）](#標準入力例数字)
   - [標準入力例（文字列）](#標準入力例文字列)
@@ -607,6 +608,44 @@ public class Main {
 }
 ```
 
+### 要素の検索
+List クラスで用意されている indexOf メソッドを使用する。<br>
+リストに追加されている要素の中で、指定したオブジェクトが含まれる最初の要素を検索するメソッドである。<br>
+リストの中に一致する要素が複数存在する場合は最初のインデックスを返す。
+
+```Java
+list.indexOf(検索する要素);
+```
+
+List クラスで用意されている lastIndexOf メソッドを使用する。<br>
+リストに追加されている要素の中で、指定したオブジェクトが含まれる最後の要素を検索するメソッドである。<br>
+リストの中に一致する要素が複数存在する場合は最後のインデックスを返す。
+
+```Java
+list.lastIndexOf(検索する要素);
+```
+
+```Java
+import java.util.ArrayList;
+import java.util.List;
+ 
+public class Main {
+    public static void main(String[] args) throws Exception {
+        
+        // 文字列型リストを作成
+        List<String> listA = new ArrayList<String>();
+        
+        // リストに要素を追加 
+        listA.add("あいうえお"); 
+        listA.add("かきくけこ"); 
+        listA.add("さしすせそ");
+        listA.add("かきくけこ");
+
+        System.out.println("最初から" + list.indexOf("かきくけこ") + "番目");       // 最初から1番目
+        System.out.println("最後から" + list.lastIndexOf("かきくけこ") + "番目");   // 最後から3番目
+    }
+}
+```
 
 ## Atcoder
 ### 標準入力例（数字）
