@@ -594,6 +594,8 @@ public class Main {
 ```
 
 #### 文字列
+<img src="https://github.com/user-attachments/assets/d08ec2a4-d2d5-4b30-8024-29e647de22c8.jpg" width="20%">
+
 ```Java
 import java.util.*;
 import java.util.Scanner;
