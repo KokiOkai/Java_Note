@@ -29,7 +29,9 @@ Javaコーディング用のメモ
     - [重複していない要素を削除する](#重複していない要素を削除する)
     - [条件付きで要素を削除する](#条件付きで要素を削除する)
 - [Atcoder](#Atcoder)
-  - [標準入力](#標準入力)
+  - [標準入力例（数字）](#標準入力例数字)
+  - [標準入力例（文字列）](#標準入力例文字列)
+  - [標準入力例（二次元配列）](#標準入力例二次元配列)
   - [アルファベットの文字列リスト](#アルファベットの文字列リスト)
 - [Track](#Track)
   - [標準入力例](#標準入力例)
@@ -571,8 +573,7 @@ public class Main {
 
 
 ## Atcoder
-### 標準入力
-#### 数字
+### 標準入力例（数字）
 ```Java
 import java.util.*;
 import java.util.Scanner;
@@ -593,7 +594,7 @@ public class Main {
 }
 ```
 
-#### 文字列
+### 標準入力例（文字列）
 <img src="https://github.com/user-attachments/assets/d08ec2a4-d2d5-4b30-8024-29e647de22c8" width="40%">
 <br>
 <img src="https://github.com/user-attachments/assets/bae73842-adbc-4082-855a-f9f706a7d0dc" width="10%">
@@ -624,7 +625,7 @@ public class Main {
 }
 ```
 
-#### 二次元配列
+### 標準入力例（二次元配列）
 <img src="https://user-images.githubusercontent.com/105481222/225970260-4a00590d-91f0-4bdd-b362-7bc59e3f8e81.jpg" width="20%">
 <img src="https://user-images.githubusercontent.com/105481222/225971011-baca69fc-a3cf-4ce9-823a-dce1d1a23259.jpg" width="10%">
 
