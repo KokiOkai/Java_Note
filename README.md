@@ -23,6 +23,7 @@ Javaコーディング用のメモ
   - [長さの取得](#長さの取得)
   - [要素の取得](#要素の取得)
   - [要素の追加](#要素の追加)
+  - [要素の置換](#要素の置換)
   - [要素の削除](#要素の削除)
     - [1つの要素を削除する](#1つの要素を削除する) 
     - [複数の要素を削除する（重複している要素の削除）](#複数の要素を削除する重複している要素の削除)
@@ -377,6 +378,41 @@ public class Main {
        // インデックスを指定して要素を追加 
        listA.add(1, "わをん"); 
        System.out.println("要素追加後A:" + listA);   // 要素追加後A: [あいうえお, わをん, かきくけこ, さしすせそ]
+    }
+}
+```
+
+### 要素の置換
+List クラスで用意されている set メソッドを使用する。<br>
+リストに追加されている要素の中で、指定したインデックスの要素を別の要素に置き換えるメソッドである。<br>
+第一引数をインデックス、第二引数を新たに格納する値として指定することで、リストから指定した要素を置換する。
+
+```Java
+list.set(インデックス, 新たに格納する要素);
+```
+
+```Java
+import java.util.ArrayList; 
+import java.util.List;
+ 
+public class Main {
+    public static void main(String[] args) throws Exception {
+        
+       // 文字列型リストを作成
+       List<String> listA = new ArrayList<String>(); 
+       
+       // リストの最後に要素を追加 
+       listA.add("あいうえお"); 
+       listA.add("かきくけこ");
+       listA.add("さしすせそ");
+       System.out.println("要素追加後A:" + listA);   // 要素追加後A: [あいうえお, かきくけこ, さしすせそ]
+       
+       
+       // リストの最後に要素を追加 
+       listB.set(0, わ); 
+       listB.set(1, を);
+       listB.set(2, ん);
+       System.out.println("要素置換後A:" + listA);   // 要素置換後A: [わ, を, ん]
     }
 }
 ```
