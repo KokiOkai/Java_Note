@@ -594,7 +594,7 @@ public class Main {
 ```
 
 #### 文字列
-<img src="https://github.com/user-attachments/assets/d08ec2a4-d2d5-4b30-8024-29e647de22c8" width="50%">
+<img src="https://github.com/user-attachments/assets/d08ec2a4-d2d5-4b30-8024-29e647de22c8" width="30%">
 
 ```Java
 import java.util.*;
