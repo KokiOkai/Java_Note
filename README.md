@@ -612,6 +612,7 @@ public class Main {
 List クラスで用意されている indexOf メソッドを使用する。<br>
 リストに追加されている要素の中で、指定したオブジェクトが含まれる最初の要素を検索するメソッドである。<br>
 リストの中に一致する要素が複数存在する場合は最初のインデックスを返す。
+リストの中に一致する要素が存在しない場合は「-1」を返す。
 
 ```Java
 list.indexOf(検索する要素);
@@ -620,6 +621,7 @@ list.indexOf(検索する要素);
 List クラスで用意されている lastIndexOf メソッドを使用する。<br>
 リストに追加されている要素の中で、指定したオブジェクトが含まれる最後の要素を検索するメソッドである。<br>
 リストの中に一致する要素が複数存在する場合は最後のインデックスを返す。
+リストの中に一致する要素が存在しない場合は「-1」を返す。
 
 ```Java
 list.lastIndexOf(検索する要素);
@@ -633,16 +635,18 @@ public class Main {
     public static void main(String[] args) throws Exception {
         
         // 文字列型リストを作成
-        List<String> listA = new ArrayList<String>();
+        List<String> list = new ArrayList<String>();
         
         // リストに要素を追加 
-        listA.add("あいうえお"); 
-        listA.add("かきくけこ"); 
-        listA.add("さしすせそ");
-        listA.add("かきくけこ");
+        list.add("あいうえお"); 
+        list.add("かきくけこ"); 
+        list.add("さしすせそ");
+        list.add("かきくけこ");
 
-        System.out.println("最初から" + list.indexOf("かきくけこ") + "番目");       // 最初から1番目
-        System.out.println("最後から" + list.lastIndexOf("かきくけこ") + "番目");   // 最後から3番目
+        System.out.println("最初から" + list.indexOf("かきくけこ") + "番目");                // 最初から1番目
+        System.out.println("最後から" + list.lastIndexOf("かきくけこ") + "番目");            // 最後から3番目
+        System.out.println("存在しないときは" + list.indexOf("たちつてと") + "を出力");       // 存在しないときは-1を出力
+        System.out.println("存在しないときは" + list.lastIndexOf("たちつてと") + "を出力");   // 存在しないときは-1を出力
     }
 }
 ```
