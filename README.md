@@ -614,7 +614,7 @@ List クラスで用意されている contains メソッドを使用する。<b
 リストの中に一致する要素が存在する場合は「true」、存在しない場合は「false」を返す。
 
 ```Java
-list.indexOf(検索する要素);
+list.contains(検索する要素);
 ```
 
 List クラスで用意されている indexOf メソッドを使用する。<br>
