@@ -25,9 +25,10 @@ Javaコーディング用のメモ
   - [要素の追加](#要素の追加)
   - [要素の置換](#要素の置換)
   - [要素の削除](#要素の削除)
-    - [1つの要素を削除する](#1つの要素を削除する) 
-    - [複数の要素を削除する（重複している要素の削除）](#複数の要素を削除する重複している要素の削除)
-    - [重複していない要素を削除する](#重複していない要素を削除する)
+    - [指定した1つの要素を削除する](#指定した1つの要素を削除する) 
+    - [指定した複数の要素を削除する](#指定した複数の要素を削除する)
+    - [指定した要素以外を削除する](#指定した要素以外を削除する)
+    - [重複している要素を削除する](#重複している要素を削除する)
     - [条件付きで要素を削除する](#条件付きで要素を削除する)
   - [要素の検索](#要素の検索)
 - [Atcoder](#Atcoder)
@@ -419,7 +420,7 @@ public class Main {
 ```
 
 ### 要素の削除
-#### 1つの要素を削除する
+#### 指定した1つの要素を削除する
 List クラスで用意されている remove メソッドを使用する。<br>
 引数としてインデックス、削除する要素（文字列など）を指定することで、リストから指定した要素を削除する。<br>
 削除された要素の後に格納されていた要素は、インデックス番号が1つずつずれる。
@@ -486,7 +487,7 @@ public class Main {
 ```
 指定したインスタンスが複数ある場合は、最初の1つ目の要素が削除されるが、2つ目の要素は削除されない。
 
-#### 複数の要素を削除する（重複している要素の削除）
+#### 指定した複数の要素を削除する
 List クラスで用意されている removeAll メソッドを使用する。<br>
 List 型に指定した要素をすべて削除するためのメソッドである。
 
@@ -532,7 +533,7 @@ public class Main {
 }
 ```
 
-#### 重複していない要素を削除する
+#### 指定した要素以外を削除する
 List クラスで用意されている retainAll メソッドを使用する。<br>
 List 型に指定した以外の要素をすべて削除するためのメソッドである。
 
@@ -575,6 +576,38 @@ public class Main {
         listA.retainAll(listB);
         
         System.out.println("削除後:" + listA);   // 削除後: [かきくけこ, さしすせそ]
+    }
+}
+```
+
+#### 重複している要素を削除する
+Stream APIで用意されている distinct メソッドを使用する。<br>
+リストの中で重複している要素をすべて削除するためのメソッドである。
+
+```Java
+list.stream().distinct().collect(Collectors.toList());
+```
+
+```Java
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+ 
+public class Main {
+    public static void main(String[] args) throws Exception {
+        
+        // 文字列型リストを作成
+        List<String> list = new ArrayList<String>();
+        
+        // リストに要素を追加 
+        list.add("あいうえお"); 
+        list.add("かきくけこ"); 
+        list.add("さしすせそ");
+        list.add("かきくけこ");
+
+        System.out.println("削除前:" + listA);   // 削除前: [あいうえお, かきくけこ, さしすせそ, かきくけこ]
+        listA = listA.stream().distinct().collect(Collectors.toList());
+        System.out.println("削除後:" + listA);   // 削除後: [あいうえお, かきくけこ, さしすせそ]
     }
 }
 ```
