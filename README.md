@@ -385,6 +385,7 @@ public class Main {
 ```
 
 ### 要素の置換
+#### 指定した1つの要素を置換する
 List クラスで用意されている set メソッドを使用する。<br>
 リストに追加されている要素の中で、指定したインデックスの要素を別の要素に置き換えるメソッドである。<br>
 第一引数をインデックス、第二引数を新たに格納する値として指定することで、リストから指定した要素を置換する。
@@ -415,6 +416,33 @@ public class Main {
        listA.set(1, "を");
        listA.set(2, "ん");
        System.out.println("要素置換後A:" + listA);   // 要素置換後A: [わ, を, ん]
+    }
+}
+```
+
+#### 特定の要素を任意の文字列に置換する
+String クラスで用意されている replaceAll メソッドを使用する。<br>
+リストに追加されているすべての要素に、特定の文字列を追加して置き換えるメソッドである。<br>
+
+```Java
+list.replaceAll(引数 -> 処理);
+```
+
+```Java
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+
+        // 文字列型リストを作成
+        List<String> list = new ArrayList<>(Arrays.asList("A", "B", "C", "D"));
+        System.out.println("要素置換前:" + list);   // 要素置換前: [A, B, C, D]
+
+        // すべての要素に特定の文字列を追加して置換する
+        list.replaceAll(s -> s + "++");
+        System.out.println("要素置換後:" + list);   // 要素置換後: [A++, B++, C++, D++]
     }
 }
 ```
