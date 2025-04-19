@@ -25,6 +25,7 @@ Javaコーディング用のメモ
   - [要素の追加](#要素の追加)
   - [要素の置換](#要素の置換)
     - [指定した1つの要素を置換する](#指定した1つの要素を置換する) 
+    - [すべての要素を任意の文字列に置換する](#すべての要素を任意の文字列に置換する)
     - [特定の要素を任意の文字列に置換する](#特定の要素を任意の文字列に置換する)
   - [要素の削除](#要素の削除)
     - [指定した1つの要素を削除する](#指定した1つの要素を削除する) 
@@ -422,9 +423,9 @@ public class Main {
 }
 ```
 
-#### 特定の要素を任意の文字列に置換する
+#### すべての要素を任意の文字列に置換する
 String クラスで用意されている replaceAll メソッドを使用する。<br>
-リストに追加されているすべての要素を、任意の文字列に置き換えるメソッドである。<br>
+リストに追加されているすべての要素を、任意の文字列に置き換えるメソッドである。
 
 ```Java
 list.replaceAll(引数 -> 処理);
@@ -449,6 +450,53 @@ public class Main {
         // すべての要素を任意の文字列に置換する
         list.replaceAll(s -> "あ");
         System.out.println("要素置換後:" + list);   // 要素置換後: [あ, あ, あ, あ]
+    }
+}
+```
+
+#### 特定の要素を任意の文字列に置換する
+String クラスで用意されている replaceAll メソッドを使用する。<br>
+リストに追加されているすべての要素を、任意の文字列に置き換えるメソッドである。
+
+```Java
+list.replaceAll(引数 -> 処理);
+```
+
+処理の部分をラムダ式で記述することで、if文と同じ処理を行うこともできる。
+| 記号 | 意味 |
+| :--- | :--- |
+| ? | ～ならば |
+| : | ～でなければ |
+
+```Java
+// 引数をsとする
+list.replaceAll(s -> s != null ? s : "");
+
+// if文で表した場合
+s -> {
+    if (s != null) {
+        return s;
+    } else {
+        return "";
+    }
+}
+```
+
+```Java
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+
+        // 文字列型リストを作成
+        List<String> list = new ArrayList<>(Arrays.asList("A", "B", "C", "D"));
+        System.out.println("要素置換前:" + list);   // 要素置換前: [A, B, C, D]
+
+        // すべての要素に特定の文字列を追加して置換する
+        list.replaceAll(s -> s != "B" ? s : "あ");
+        System.out.println("要素置換後:" + list);   // 要素置換後: [A, あ, C, D]
     }
 }
 ```
