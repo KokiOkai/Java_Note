@@ -424,7 +424,7 @@ public class Main {
 
 #### 特定の要素を任意の文字列に置換する
 String クラスで用意されている replaceAll メソッドを使用する。<br>
-リストに追加されているすべての要素に、特定の文字列を追加して置き換えるメソッドである。<br>
+リストに追加されているすべての要素を、任意の文字列に置き換えるメソッドである。<br>
 
 ```Java
 list.replaceAll(引数 -> 処理);
@@ -445,6 +445,10 @@ public class Main {
         // すべての要素に特定の文字列を追加して置換する
         list.replaceAll(s -> s + "++");
         System.out.println("要素置換後:" + list);   // 要素置換後: [A++, B++, C++, D++]
+
+        // すべての要素を任意の文字列に置換する
+        list.replaceAll(s -> "あ");
+        System.out.println("要素置換後:" + list);   // 要素置換後: [あ, あ, あ, あ]
     }
 }
 ```
