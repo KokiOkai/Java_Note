@@ -15,6 +15,7 @@ Javaコーディング用のメモ
   - [数字の切り上げ](#数字の切り上げ)
   - [数字の切り捨て](#数字の切り捨て)
   - [数字の四捨五入](#数字の四捨五入)
+  - [数字の累乗](#数字の累乗)
 - [配列](#配列)
   - [文字列を分割する](#文字列を分割する) 
   - [文字列を1文字ずつ取り出す](#文字列を1文字ずつ取り出す)
@@ -162,6 +163,7 @@ System.out.println(Math.ceil(-3.89));   // -3.0
 
 ### 数字の切り捨て
 Math クラスで用意されている floor メソッドを使用する。
+
 ```Java
 System.out.println(Math.floor(1.34));    // 1.0
 System.out.println(Math.floor(3.67));    // 3.0
@@ -172,6 +174,7 @@ System.out.println(Math.floor(-3.89));   // -4.0
 
 ### 数字の四捨五入
 Math クラスで用意されている round メソッドを使用する。
+
 ```Java
 System.out.println(Math.round(1.34));    // 1
 System.out.println(Math.round(3.67));    // 4
@@ -180,6 +183,16 @@ System.out.println(Math.round(4.5));     // 5
 System.out.println(Math.round(-0.23));   // 0
 System.out.println(Math.round(-3.89));   // -4
 ```
+
+### 数字の累乗
+累乗した値を取得するには Math クラスで用意されている pow メソッドを使用する。<br>
+第一引数に指定した値を、第二引数で指定した値だけ累乗した結果を戻り値として返す。<br>
+引数と戻り値は double 型である。
+
+```Java
+double n = Math.pow(第一引数, 第二引数);
+```
+
 
 
 ## 配列
