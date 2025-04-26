@@ -23,6 +23,9 @@ Javaコーディング用のメモ
 - [リスト](#リスト)
   - [長さの取得](#長さの取得)
   - [要素の取得](#要素の取得)
+    - [指定したインデックスの要素を取得する](#指定したインデックスの要素を取得する)
+    - [最大値・最小値を取得する](#最大値・最小値を取得する)
+    - [合計値・平均値を取得する](#合計値・平均値を取得する)
   - [要素の追加](#要素の追加)
   - [要素の置換](#要素の置換)
     - [指定した1つの要素を置換する](#指定した1つの要素を置換する) 
@@ -350,10 +353,47 @@ list.size();
 ```
 
 ### 要素の取得
+#### 指定したインデックスの要素を取得する
 List クラスで用意されている get メソッドを使用する。<br>
 
 ```Java
 list.get(インデックス);
+```
+
+#### 最大値・最小値を取得する
+Collections クラスで用意されている max メソッド、min メソッドを使用する。<br>
+
+```Java
+int max = Collections.max(list);
+int min = Collections.min(list);
+```
+
+#### 合計値・平均値を取得する
+Stream API で用意されている sum メソッド、average メソッドを使用する。<br>
+リストが空の場合は 0 を返す。
+
+```Java
+import java.util.Arrays;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+
+        // 整数型リストを作成
+        List<Integer> listA = Arrays.asList(10, 20, 30, 40, 50);
+
+        // 浮動小数点型リストを作成
+        List<Double> listB = Arrays.asList(10.5, 20.0, 30.5, 40.0, 50.5);
+
+        // 合計値を算出
+        int sum_A = listA.stream().mapToInt(Integer::intValue).sum();           // 150
+        double sum_B = listB.stream().mapToDouble(Double::doubleValue).sum();   // 151.5
+
+        // 平均値を算出
+        double average_A = listA.stream().mapToInt(Integer::intValue).average().orElse(0);   // 30.0
+        double average_B = listB.stream().mapToInt(Integer::intValue).average().orElse(0);   // 30.3
+    }
+}
 ```
 
 ### 要素の追加
