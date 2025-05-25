@@ -15,6 +15,7 @@ Javaコーディング用のメモ
   - [数字の切り上げ](#数字の切り上げ)
   - [数字の切り捨て](#数字の切り捨て)
   - [数字の四捨五入](#数字の四捨五入)
+  - [数字の絶対値](#数字の絶対値)
   - [数字の累乗](#数字の累乗)
 - [配列](#配列)
   - [文字列を分割する](#文字列を分割する) 
@@ -186,6 +187,15 @@ System.out.println(Math.round(4.499));   // 4
 System.out.println(Math.round(4.5));     // 5
 System.out.println(Math.round(-0.23));   // 0
 System.out.println(Math.round(-3.89));   // -4
+```
+
+### 数字の絶対値
+Math クラスで用意されている abs メソッドを使用する。<br>
+引数のデータ型に対応して、引数の絶対値を戻り値として返す。
+
+```Java
+System.out.println(Math.abs(-18));      // 18
+System.out.println(Math.abs(-7.224));   // 7.224
 ```
 
 ### 数字の累乗
