@@ -42,6 +42,7 @@ Javaコーディング用のメモ
   - [要素の並び替え](#要素の並び替え)
 - [優先度付きキュー](#優先度付きキュー)
   - [長さの取得](#長さの取得-1)
+  - [要素の追加](#要素の追加-1)
   - [最も優先度が高い値の取得](#最も優先度が高い値の取得)
   - [最も優先度が高い値の削除](#最も優先度が高い値の削除)
   - [要素の全削除](#要素の全削除)
@@ -879,10 +880,22 @@ Collections.sort(list, Collections.reverseOrder());
 
 ## 優先度付きキュー
 優先度付きキュー（PriorityQueue）は、要素が追加された順序ではなく、要素の順位づけに基づいて順序が決定される特殊なキューである。<br>
-「キュー」の一種ではあるが、「先入れ先出し」の原則は無視される。
+「キュー」の一種ではあるが、「先入れ先出し」の原則は無視される。<br>
+PriorityQueue クラスを宣言するときには、何を優先させるかを決めることができる。<br>
 
+- 最小値を優先する場合
 ```Java
 PriorityQueue<Integer> pq = new PriorityQueue<>();
+```
+
+- 最大値を優先する場合
+```Java
+PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+```
+
+- 文字列を辞書順に優先する場合
+```Java
+PriorityQueue<String> pq = new PriorityQueue<>();
 ```
 
 典型用途としては以下のような場合である。
@@ -892,6 +905,15 @@ PriorityQueue<Integer> pq = new PriorityQueue<>();
 - スケジューリング
 - 上位K件の管理
 - Dijkstra法
+
+### 要素の追加
+PriorityQueue クラスで用意されている add メソッド または offer メソッドを使用する。<br>
+両者どちらを使っても、特に違いはない。
+
+```Java
+pq.add();
+pq.offer();
+```
 
 ### 長さの取得
 PriorityQueue クラスで用意されている size メソッドを使用する。
