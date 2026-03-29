@@ -871,6 +871,37 @@ Collections.sort(list, Collections.reverseOrder());
 ```
 
 
+## 優先度付きキュー
+優先度付きキュー（PriorityQueue）は、要素が追加された順序ではなく、要素の順位づけに基づいて順序が決定される特殊なキューである。<br>
+「キュー」の一種ではありますが、「先入れ先出し」の原則は無視される。
+
+```Java
+PriorityQueue<Integer> pq = new PriorityQueue<>();
+```
+
+典型用途としては以下のような場合である。
+- 最小値 / 最大値を何度も取りたい
+- 「今いちばん条件が良いもの」を取り出す
+- イベントを時刻順で処理
+- スケジューリング
+- 上位K件の管理
+- Dijkstra法
+
+### 長さの取得
+PriorityQueue クラスで用意されている size メソッドを使用する。<br>
+
+```Java
+pq.size();
+```
+
+### 最小値の取得
+PriorityQueue クラスで用意されている peek メソッドを使用する。<br>
+
+```Java
+pq.peek();
+```
+
+
 ## Atcoder
 ### 標準入力例（数字）
 ```Java
