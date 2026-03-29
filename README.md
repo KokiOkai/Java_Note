@@ -873,7 +873,7 @@ Collections.sort(list, Collections.reverseOrder());
 
 ## 優先度付きキュー
 優先度付きキュー（PriorityQueue）は、要素が追加された順序ではなく、要素の順位づけに基づいて順序が決定される特殊なキューである。<br>
-「キュー」の一種ではありますが、「先入れ先出し」の原則は無視される。
+「キュー」の一種ではあるが、「先入れ先出し」の原則は無視される。
 
 ```Java
 PriorityQueue<Integer> pq = new PriorityQueue<>();
