@@ -951,6 +951,16 @@ PriorityQueue クラスで用意されている isEmpty メソッドを使用す
 pq.isEmpty();
 ```
 
+### 計算量
+| 操作 | 計算量 |
+| :--- | :--- |
+| add() / offer() | O(log N) |
+| poll() | O(log N) |
+| peek() | O(1) |
+| size() | O(1) |
+| contains() | O(N) |
+| remove(インデックス または 削除する要素) | O(N) |
+
 
 ## Atcoder
 ### 標準入力例（数字）
