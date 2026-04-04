@@ -103,7 +103,7 @@ import java.util.PriorityQueue;
 public class Main {
     public static void main(String[] args) {
 
-        // 優先度付きキューを作成
+        // 優先度付きキュー（最小値を優先）を作成
         PriorityQueue<Integer> pq = new PriorityQueue<>();
 
         // 優先度付きキューに要素を追加
