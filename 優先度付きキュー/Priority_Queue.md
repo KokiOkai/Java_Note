@@ -7,6 +7,8 @@
   - [要素の全削除](#要素の全削除)
   - [要素が空かどうか確認](#要素が空かどうか確認)
   - [計算量](#計算量)
+- [コード例](#コード例)
+  - [要素の出力](#要素の出力) 
 
  
 ## 優先度付きキュー
@@ -93,5 +95,41 @@ pq.isEmpty();
 | remove(インデックス または 削除する要素) | O(N) |
 
 
+## コード例
+### 要素の出力
+```Java
+import java.util.PriorityQueue;
+
+public class Main {
+    public static void main(String[] args) {
+
+        // 優先度付きキューを作成
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+
+        // 優先度付きキューに要素を追加
+        pq.add(8);
+        pq.add(2);
+        pq.add(5);
+        pq.add(1);
+
+        // 中身確認
+        System.out.println(pq); 
+
+        // 出力
+        while (!pq.isEmpty()) {
+            System.out.println(pq.poll());
+        }
+    }
+}
+
+/*
+出力結果
+[8, 2, 5, 1] ← 中身がソートされているわけではない
+1
+2
+5
+8
+*/
+```
 
 
