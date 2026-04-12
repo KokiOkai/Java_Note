@@ -8,7 +8,8 @@
   - [要素が空かどうか確認](#要素が空かどうか確認)
   - [計算量](#計算量)
 - [コード例](#コード例)
-  - [要素の出力](#要素の出力) 
+  - [要素の出力](#要素の出力)
+  - [上位K件の要素を優先的に残す](#上位K件の要素を優先的に残す)
 
  
 ## 優先度付きキュー
@@ -131,6 +132,44 @@ public class Main {
 2
 5
 8
+*/
+```
+
+### 上位K件の要素を優先的に残す
+```Java
+import java.util.PriorityQueue;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {8, 1, 5, 10, 3, 7};
+
+        // 上位K件の要素を優先的に残す
+        int k = 3;
+        // 優先度付きキュー（最小値を優先）を作成
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+
+        for (int x : arr) {
+            // 優先度付きキューに要素を追加
+            pq.add(x);
+            // 優先度付きキューの要素数がK件を超えた場合
+            if (pq.size() > k) {
+                // 優先度付きキューの最小値を削除
+                pq.poll();
+            }
+        }
+
+        // 出力
+        while (!pq.isEmpty()) {
+            System.out.println(pq.poll());
+        }
+    }
+}
+
+/*
+出力結果
+7
+8
+10
 */
 ```
 
