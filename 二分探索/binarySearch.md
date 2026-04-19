@@ -8,6 +8,8 @@
 Javaでの二分探索（binary search）は、「ソート済み配列に対して高速に値を探すアルゴリズム」である。<br>
 計算量は O(log N) で非常に高速に処理できる。
 
+<img src="https://github.com/user-attachments/assets/de76c25a-15c5-4c03-b475-7e200360ab62.jpg" width="30%">
+
 ### 基本実装
 ```Java
 import java.util.*;
