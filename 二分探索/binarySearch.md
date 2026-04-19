@@ -5,8 +5,8 @@
 
 
 ## 二分探索
-Javaでの二分探索（binary search）は、「ソート済み配列に対して高速に値を探すアルゴリズム」である。<br>
-計算量は O(log N) で非常に高速に処理できる。
+Javaでの二分探索（binary search）は、「ソート済みの配列に対して高速に値を探すアルゴリズム」である。<br>
+探索範囲を半分ずつ狭めながら目的の値を見つける手法であり、計算量は O(log N) で非常に高速に処理できる。
 
 <img src="https://github.com/user-attachments/assets/cb6ecd49-4e54-4e1e-b7c7-d0f4d02dcb25" width="50%">
 
