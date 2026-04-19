@@ -28,7 +28,7 @@ public class Main {
     }
 
     // 二分探索の実装
-    public static int binarySearch(int[] arr, int target) {
+    static int binarySearch(int[] arr, int target) {
         int left = 0;
         int right = arr.length - 1;
 
