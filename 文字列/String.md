@@ -9,6 +9,8 @@
   - [指定した範囲の文字の取得](#指定した範囲の文字の取得)
   - [文字列を大文字にする](#文字列を大文字にする)
   - [文字列を小文字にする](#文字列を小文字にする)
+  - [文字列を反転させる](#文字列を反転させる)
+    - [文字列の回文判定](#文字列の回文判定)
   - [文字列の連結](#文字列の連結)
   - [複数の文字列を区切り文字で連結](#複数の文字列を区切り文字で連結)
   - [文字列の置換](#文字列の置換)
@@ -152,6 +154,31 @@ String クラスで用意されている toLowerCase メソッドを使用する
 String str = "Apple";
 
 System.out.println(str.toLowerCase());   // apple
+```
+
+
+### 文字列を反転させる
+StringBuilder クラスで用意されている reverse メソッドを使用する。<br>
+
+```Java
+String s = "ABC";
+String rev = new StringBuilder(s).reverse().toString();
+
+System.out.println(rev);   // CBA
+```
+
+#### 文字列の回文判定
+元の文字列と反転させた文字列を比較することで、回文判定ができる。<br>
+
+```Java
+String s = "ABCBA";
+String rev = new StringBuilder(s).reverse().toString();
+
+if (s.equals(rev)) {
+    System.out.println("Yes");
+} else {
+    System.out.println("No");
+}
 ```
 
 
