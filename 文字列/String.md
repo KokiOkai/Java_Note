@@ -8,6 +8,7 @@
   - [文字列を大文字にする](#文字列を大文字にする)
   - [文字列を小文字にする](#文字列を小文字にする)
   - [文字列の先頭と末尾から空白文字を取り除く](#文字列の先頭と末尾から空白文字を取り除く)
+  - [文字列の置換](#文字列の置換)
  
 
 ## 文字列
@@ -110,3 +111,13 @@ System.out.println(str2.trim());   // AB CD
 ```
 
 
+### 文字列の置換
+String クラスで用意されている replace メソッドを使用する。<br>
+
+```Java
+String str1 = "Herro Java";
+String str2 = "東京都港区";
+
+System.out.println(str1.replace('r', 'l'));          // Hello Java
+System.out.println(str2.replace("港区", "中央区"));   // 東京都中央区
+```
