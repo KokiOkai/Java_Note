@@ -5,6 +5,9 @@
   - [長さの比較](#長さの比較)
   - [指定した文字のインデックスの取得](#指定した文字のインデックスの取得)
   - [指定した範囲の文字の取得](#指定した範囲の文字の取得)
+  - [文字列を大文字にする](#文字列を大文字にする)
+  - [文字列を小文字にする](#文字列を小文字にする)
+  - [文字列の先頭と末尾から空白文字を取り除く](#文字列の先頭と末尾から空白文字を取り除く)
  
 
 ## 文字列
@@ -70,6 +73,26 @@ String str = "ABCDEFG";
 
 System.out.println(msg.substring(3, 5));   // DE
 System.out.println(msg.substring(5, 7));   // FG
+```
+
+
+### 文字列を大文字にする
+String クラスで用意されている toUpperCase メソッドを使用する。<br>
+
+```Java
+String str = "Apple";
+
+System.out.println(str.toUpperCase());   // APPLE
+```
+
+
+### 文字列を小文字にする
+String クラスで用意されている toLowerCase メソッドを使用する。<br>
+
+```Java
+String str = "Apple";
+
+System.out.println(str.toLowerCase());   // apple
 ```
 
 
