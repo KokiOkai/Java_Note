@@ -8,6 +8,7 @@
   - [文字列を大文字にする](#文字列を大文字にする)
   - [文字列を小文字にする](#文字列を小文字にする)
   - [文字列の連結](#文字列の連結)
+  - [複数の文字列を区切り文字で連結](#複数の文字列を区切り文字で連結)
   - [文字列の置換](#文字列の置換)
   - [文字列の先頭と末尾から空白文字を取り除く](#文字列の先頭と末尾から空白文字を取り除く)
  
@@ -107,6 +108,31 @@ String str2 = "港区";
 
 System.out.println(str1 + str2);         // 東京都港区
 System.out.println(str1.concat(str2));   // 東京都港区
+```
+
+
+### 複数の文字列を区切り文字で連結
+String クラスで用意されている join メソッドを使用する。<br>
+1番目の引数に文字列の間に挟む区切り文字を指定する。<br>
+2番目の引数以降に連結する文字列を必要なだけ指定する。<br>
+戻り値として連結した新しい文字列を返す。<br>
+
+```Java
+String str = String.join("-", "Apple", "Grape", "Melon");
+
+System.out.println(str);   // Apple-Grape-Melon
+```
+
+区切り文字は文字列としても指定できる。<br>
+List クラスで複数の文字列を格納し、第二引数に指定することもできる。<br>
+
+```Java
+import java.util.List;
+
+List<String> strings = List.of("One", "Two", "Three");
+String str = String.join(" * ", strings);
+
+System.out.println(str);   // One * Two * Three
 ```
 
 
