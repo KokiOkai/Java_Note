@@ -8,6 +8,8 @@
   - [指定した文字列が最後に出現するインデックスの取得](#指定した文字列が最後に出現するインデックスの取得)
   - [指定したインデックスの文字の取得](#指定したインデックスの文字の取得)
   - [指定した範囲の部分文字列の取得](#指定した範囲の部分文字列の取得)
+  - [文字列を先頭から切り出す](#文字列を先頭から切り出す)
+  - [文字列を末尾から切り出す](#文字列を末尾から切り出す)
   - [文字列を大文字にする](#文字列を大文字にする)
   - [文字列を小文字にする](#文字列を小文字にする)
   - [文字列の並び替え](#文字列の並び替え)
@@ -144,6 +146,36 @@ String str = "ABCDEFG";
 
 System.out.println(msg.substring(3, 5));   // DE
 System.out.println(msg.substring(5, 7));   // FG
+```
+
+
+### 文字列を先頭から切り出す
+String クラスで用意されている substring メソッドを使用する。<br>
+
+```Java
+String str = "ABCDEFG";
+
+int n = 3;
+String head = str.substring(0, n);   // 切り出したもの
+String rest = str.substring(n);      // 切り出した残り
+
+System.out.println(head);   // ABC
+System.out.println(rest);   // DEFG
+```
+
+
+### 文字列を末尾から切り出す
+String クラスで用意されている substring メソッドを使用する。<br>
+
+```Java
+String str = "ABCDEFG";
+
+int n = 3;
+String tail = str.substring(s.length() - n);      // 切り出したもの
+String rest = str.substring(0, s.length() - n);   // 切り出した残り
+
+System.out.println(tail);   // EFG
+System.out.println(rest);   // ABCD
 ```
 
 
