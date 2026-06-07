@@ -7,8 +7,9 @@
   - [指定した範囲の文字の取得](#指定した範囲の文字の取得)
   - [文字列を大文字にする](#文字列を大文字にする)
   - [文字列を小文字にする](#文字列を小文字にする)
-  - [文字列の先頭と末尾から空白文字を取り除く](#文字列の先頭と末尾から空白文字を取り除く)
+  - [文字列の連結](#文字列の連結)
   - [文字列の置換](#文字列の置換)
+  - [文字列の先頭と末尾から空白文字を取り除く](#文字列の先頭と末尾から空白文字を取り除く)
  
 
 ## 文字列
@@ -97,17 +98,15 @@ System.out.println(str.toLowerCase());   // apple
 ```
 
 
-### 文字列の先頭と末尾から空白文字を取り除く
-String クラスで用意されている trim メソッドを使用する。<br>
-また、strip メソッドでも同様の使い方ができる。<br>
-両者の違いは、trim メソッドが半角空白だけを取り除くのに対し、strip メソッドは全角空白も含めて取り除く。<br>
+### 文字列の連結
+＋演算子を使用する、または String クラスで用意されている concat メソッドを使用する。<br>
 
 ```Java
-String str1 = " ABCD ";
-String str2 = " AB CD ";
+String str1 = "東京都";
+String str2 = "港区";
 
-System.out.println(str1.trim());   // ABCD
-System.out.println(str2.trim());   // AB CD
+System.out.println(str1 + str2);         // 東京都港区
+System.out.println(str1.concat(str2));   // 東京都港区
 ```
 
 
@@ -121,3 +120,18 @@ String str2 = "東京都港区";
 System.out.println(str1.replace('r', 'l'));          // Hello Java
 System.out.println(str2.replace("港区", "中央区"));   // 東京都中央区
 ```
+
+
+### 文字列の先頭と末尾から空白文字を取り除く
+String クラスで用意されている trim メソッドを使用する。<br>
+また、strip メソッドでも同様の使い方ができる。<br>
+両者の違いは、trim メソッドが半角空白だけを取り除くのに対し、strip メソッドは全角空白も含めて取り除く。<br>
+
+```Java
+String str1 = " ABCD ";
+String str2 = " AB CD ";
+
+System.out.println(str1.trim());   // ABCD
+System.out.println(str2.trim());   // AB CD
+```
+
