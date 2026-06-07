@@ -4,6 +4,7 @@
   - [長さの取得](#長さの取得)
   - [長さの比較](#長さの比較)
   - [指定した文字のインデックスの取得](#指定した文字のインデックスの取得)
+  - [指定した範囲の文字の取得](#指定した範囲の文字の取得)
  
 
 ## 文字列
@@ -60,5 +61,29 @@ System.out.println(str.charAt(3));   // D
 ```
 
 
+### 指定した範囲の文字の取得
+String クラスで用意されている substring メソッドを使用する。<br>
+開始インデックスと終了インデックスを指定して、文字列の中の部分文字列を取得する。<br>
+
+```Java
+String str = "ABCDEFG";
+
+System.out.println(msg.substring(3, 5));   // DE
+System.out.println(msg.substring(5, 7));   // FG
+```
+
+
+### 文字列の先頭と末尾から空白文字を取り除く
+String クラスで用意されている trim メソッドを使用する。<br>
+また、strip メソッドでも同様の使い方ができる。<br>
+両者の違いは、trim メソッドが半角空白だけを取り除くのに対し、strip メソッドは全角空白も含めて取り除く。<br>
+
+```Java
+String str1 = " ABCD ";
+String str2 = " AB CD ";
+
+System.out.println(str1.trim());   // ABCD
+System.out.println(str2.trim());   // AB CD
+```
 
 
