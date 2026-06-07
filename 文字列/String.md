@@ -1,6 +1,7 @@
 ## 目次
 - [文字列](#文字列)
   - [文字列の等号](#文字列の等号)
+  - [空文字の判定](#空文字の判定)
   - [長さの取得](#長さの取得)
   - [長さの比較](#長さの比較)
   - [指定した文字列が最初に出現するインデックスの取得](#指定した文字列が最初に出現するインデックスの取得)
@@ -32,6 +33,14 @@ String str_02 = new String(hello);   // 異なるオブジェクト
 System.out.println(hello == str_01);        // true
 System.out.println(hello == str_02);        // false
 System.out.println(hello.equals(str_02));   // true
+```
+
+
+### 空文字の判定
+String クラスで用意されている isEmpty メソッドを使用する。<br>
+
+```Java
+str.isEmpty()
 ```
 
 
@@ -191,6 +200,29 @@ String str2 = "港区";
 
 System.out.println(str1 + str2);         // 東京都港区
 System.out.println(str1.concat(str2));   // 東京都港区
+```
+
+文字列の連結を大量に処理する場合は、StringBuilder クラスで用意されている append メソッドを使用するほうが良い。<br>
+
+```Java
+StringBuilder sb = new StringBuilder();
+for (int i = 0; i < 10; i++) {
+    sb.append(i);
+}
+String result = sb.toString();
+```
+
+ちなみに StringBuilder クラスで文字列を連結する場合は、型を気にしなくてもよい。<br>
+
+```Java
+StringBuilder sb = new StringBuilder();
+
+sb.append("ABC");
+sb.append(123);
+
+String str = sb.toString();
+
+System.out.println(str);   // ABC123
 ```
 
 
