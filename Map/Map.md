@@ -25,6 +25,7 @@ Map
 | TreeMap | O(logN) | 昇順 |
 
 ```Java
+// 宣言
 Map<キーのデータ型, 値のデータ型> 変数名 = new HashMap<>();
 Map<キーのデータ型, 値のデータ型> 変数名 = new LinkedHashMap<>();
 Map<キーのデータ型, 値のデータ型> 変数名 = new TreeMap<>();
