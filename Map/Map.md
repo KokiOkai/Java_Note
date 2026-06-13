@@ -24,11 +24,9 @@ Map
 | LinkedHashMap | O(1) | 挿入順 |
 | TreeMap | O(logN) | 昇順 |
 
-Map を使うときは次のように宣言する。<br>
-LinkedHashMap は少なくとも競技プログラミングでは使用することはない。<br>
-
 ```Java
 Map<キーのデータ型, 値のデータ型> 変数名 = new HashMap<>();
+Map<キーのデータ型, 値のデータ型> 変数名 = new LinkedHashMap<>();
 Map<キーのデータ型, 値のデータ型> 変数名 = new TreeMap<>();
 ```
 
