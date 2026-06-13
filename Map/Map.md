@@ -24,8 +24,10 @@ Map
 | LinkedHashMap | O(1) | 挿入順 |
 | TreeMap | O(logN) | 昇順 |
 
+Map は次のように宣言する。<br>
+宣言するときにはキーと値のデータ型を指定する必要がある。<br>
+
 ```Java
-// 宣言
 Map<キーのデータ型, 値のデータ型> 変数名 = new HashMap<>();
 Map<キーのデータ型, 値のデータ型> 変数名 = new LinkedHashMap<>();
 Map<キーのデータ型, 値のデータ型> 変数名 = new TreeMap<>();
