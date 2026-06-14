@@ -9,8 +9,9 @@
   - [指定したキーの値の取得](#指定したキーの値の取得)
   - [指定したキーが存在するか確認](#指定したキーが存在するか確認)
   - [指定した値が存在するか確認](#指定した値が存在するか確認)
-  - [キーの一覧の取得](キーの一覧の取得)
-  - [値の一覧の取得](値の一覧の取得)
+  - [キーの一覧の取得](#キーの一覧の取得)
+  - [値の一覧の取得](#値の一覧の取得)
+  - [キーと値の一覧の取得](#キーと値の一覧の取得)
 - [TreeMap](#TreeMap)
 
 
@@ -193,6 +194,25 @@ map.put("ぶどう", 120);
 
 for (Integer value : map.values()) {
     System.out.println("値: " + value);
+}
+```
+
+
+### キーと値の一覧の取得
+HashMap クラスで用意されている entrySet メソッドを使用する。<br>
+getKey メソッドでキー、getValue メソッドで値を取得する。<br>
+
+```Java
+Map<String,Integer> map = new HashMap<>();
+
+map.put("りんご", 80);
+map.put("ぶどう", 120);
+
+for(Map.Entry<Integer, Integer> e : map.entrySet()){
+    int key = e.getKey();
+    int value = e.getValue();
+
+    System.out.println(key + " " + value);
 }
 ```
 
