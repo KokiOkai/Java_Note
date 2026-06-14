@@ -90,6 +90,18 @@ System.out.println(map.get("りんご"));   // 80
 System.out.println(map.get("みかん"));   // null
 ```
 
+HashMap クラスで用意されている getOrDefault メソッドを使用する。<br>
+マップの中に指定したキーが存在しない場合は、第二引数に指定した値を返す。<br>
+
+```Java
+Map<String,Integer> map = new HashMap<>();
+
+map.put("りんご", 80);
+
+System.out.println(map.getOrDefault("りんご", -1));   // 80
+System.out.println(map.getOrDefault("みかん", -1));   // -1
+```
+
 
 ### 指定したキーが存在するか確認
 HashMap クラスで用意されている containsKey メソッドを使用する。<br>
