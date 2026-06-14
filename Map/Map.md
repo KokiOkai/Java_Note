@@ -70,7 +70,7 @@ System.out.println(map.get("りんご"));   // 80
 
 
 ### キーと値のペア数の取得
-HashMap クラスで用意されている get メソッドを使用する。<br>
+HashMap クラスで用意されている size メソッドを使用する。<br>
 
 ```Java
 Map<String,Integer> map = new HashMap<>();
