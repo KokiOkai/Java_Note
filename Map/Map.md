@@ -2,6 +2,11 @@
 - [Map](#Map)
   - [インターフェースとクラス](#インターフェースとクラス)
 - [HashMap](#HashMap)
+  - [キーと値のペアの追加](#キーと値のペアの追加)
+  - [キーと値のペア数の取得](#キーと値のペア数の取得)
+  - [指定したキーの値の取得](#指定したキーの値の取得)
+  - [指定したキーが存在するか確認](#指定したキーが存在するか確認)
+  - [指定した値が存在するか確認](#指定した値が存在するか確認)
 - [TreeMap](#TreeMap)
 
 
@@ -58,20 +63,6 @@ System.out.println(map.get("りんご"));   // 100
 ```
 
 
-### 指定したキーの値の取得
-HashMap クラスで用意されている get メソッドを使用する。<br>
-マップの中に指定したキーが存在しない場合は「null」を返す。<br>
-
-```Java
-Map<String,Integer> map = new HashMap<>();
-
-map.put("りんご", 80);
-System.out.println(map.get("りんご"));   // 80
-
-System.out.println(map.get("みかん"));   // null
-```
-
-
 ### キーと値のペア数の取得
 HashMap クラスで用意されている size メソッドを使用する。<br>
 
@@ -83,6 +74,48 @@ map.put("ぶどう", 120);
 
 int n = map.size();
 System.out.println(n);   // 2
+```
+
+
+### 指定したキーの値の取得
+HashMap クラスで用意されている get メソッドを使用する。<br>
+マップの中に指定したキーが存在しない場合は「null」を返す。<br>
+
+```Java
+Map<String,Integer> map = new HashMap<>();
+
+map.put("りんご", 80);
+
+System.out.println(map.get("りんご"));   // 80
+System.out.println(map.get("みかん"));   // null
+```
+
+
+### 指定したキーが存在するか確認
+HashMap クラスで用意されている containsKey メソッドを使用する。<br>
+引数に指定したキーがマップに存在していた場合「true」を返し、存在していなかった場合は「false」を返す。<br>
+
+```Java
+Map<String,Integer> map = new HashMap<>();
+
+map.put("りんご", 80);
+
+boolean judge1 = map.containsKey("りんご")   // true
+boolean judge2 = map.containsKey("みかん")   // false
+```
+
+
+### 指定した値が存在するか確認
+HashMap クラスで用意されている containsValue メソッドを使用する。<br>
+引数に指定したキーがマップに存在していた場合「true」を返し、存在していなかった場合は「false」を返す。<br>
+
+```Java
+Map<String,Integer> map = new HashMap<>();
+
+map.put("りんご", 80);
+
+boolean judge1 = map.containsValue("80")   // true
+boolean judge2 = map.containsValue("50")   // false
 ```
 
 
