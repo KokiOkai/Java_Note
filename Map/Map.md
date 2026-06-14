@@ -60,12 +60,15 @@ System.out.println(map.get("りんご"));   // 100
 
 ### 指定したキーの値の取得
 HashMap クラスで用意されている get メソッドを使用する。<br>
+マップの中に指定したキーが存在しない場合は「null」を返す。<br>
 
 ```Java
 Map<String,Integer> map = new HashMap<>();
 
 map.put("りんご", 80);
 System.out.println(map.get("りんご"));   // 80
+
+System.out.println(map.get("みかん"));   // null
 ```
 
 
