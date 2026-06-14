@@ -3,6 +3,7 @@
   - [インターフェースとクラス](#インターフェースとクラス)
 - [HashMap](#HashMap)
   - [キーと値のペアの追加](#キーと値のペアの追加)
+  - [キーと値のペアの削除](#キーと値のペアの削除)
   - [キーと値のペア数の取得](#キーと値のペア数の取得)
   - [指定したキーの値の取得](#指定したキーの値の取得)
   - [指定したキーが存在するか確認](#指定したキーが存在するか確認)
@@ -60,6 +61,30 @@ System.out.println(map.get("りんご"));   // 80
 
 map.put("りんご", 100);
 System.out.println(map.get("りんご"));   // 100
+```
+
+
+### キーと値のペアの削除
+HashMap クラスで用意されている remove メソッドを使用する。<br>
+引数に指定したキーと一致するキーと値のペアをマップから削除する。<br>
+指定したキーがマップに存在しなくてもエラーにはならない。<br>
+<br>
+HashMap クラスで用意されている clear メソッドを使用する。<br>
+マップに追加されているすべてのキーと値のペアを削除する。<br>
+
+```Java
+Map<String,Integer> map = new HashMap<>();
+
+map.put("りんご", 80);
+map.put("ぶどう", 120);
+
+System.out.println(map.size());  // 2
+
+map.remove("りんご");
+System.out.println(map.size());  // 1
+
+map.clear();
+System.out.println(map.size());  // 0
 ```
 
 
