@@ -78,13 +78,13 @@ Map<String,Integer> map = new HashMap<>();
 map.put("りんご", 80);
 map.put("ぶどう", 120);
 
-System.out.println(map.size());  // 2
+System.out.println(map.size());   // 2
 
 map.remove("りんご");
-System.out.println(map.size());  // 1
+System.out.println(map.size());   // 1
 
 map.clear();
-System.out.println(map.size());  // 0
+System.out.println(map.size());   // 0
 ```
 
 
