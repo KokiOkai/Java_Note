@@ -2,12 +2,15 @@
 - [Map](#Map)
   - [インターフェースとクラス](#インターフェースとクラス)
 - [HashMap](#HashMap)
+  - [マップの空判定](#マップの空判定)
   - [キーと値のペアの追加](#キーと値のペアの追加)
   - [キーと値のペアの削除](#キーと値のペアの削除)
   - [キーと値のペア数の取得](#キーと値のペア数の取得)
   - [指定したキーの値の取得](#指定したキーの値の取得)
   - [指定したキーが存在するか確認](#指定したキーが存在するか確認)
   - [指定した値が存在するか確認](#指定した値が存在するか確認)
+  - [キーの一覧の取得](キーの一覧の取得)
+  - [値の一覧の取得](値の一覧の取得)
 - [TreeMap](#TreeMap)
 
 
@@ -41,6 +44,14 @@ Map<キーのデータ型, 値のデータ型> 変数名 = new TreeMap<>();
 
 
 ## HashMap
+### マップの空判定
+HashMap クラスで用意されている isEmpty メソッドを使用する。<br>
+
+```Java
+map.isEmpty()
+```
+
+
 ### キーと値のペアの追加
 HashMap クラスで用意されている put メソッドを使用する。<br>
 
@@ -153,6 +164,36 @@ map.put("りんご", 80);
 
 boolean judge1 = map.containsValue("80")   // true
 boolean judge2 = map.containsValue("50")   // false
+```
+
+
+### キーの一覧の取得
+HashMap クラスで用意されている ketSet メソッドを使用する。<br>
+
+```Java
+Map<String,Integer> map = new HashMap<>();
+
+map.put("りんご", 80);
+map.put("ぶどう", 120);
+
+for (String key : map.keySet()) {
+    System.out.println("キー: " + key);
+}
+```
+
+
+### 値の一覧の取得
+HashMap クラスで用意されている values メソッドを使用する。<br>
+
+```Java
+Map<String,Integer> map = new HashMap<>();
+
+map.put("りんご", 80);
+map.put("ぶどう", 120);
+
+for (Integer value : map.values()) {
+    System.out.println("値: " + value);
+}
 ```
 
 
