@@ -34,13 +34,54 @@ Map<キーのデータ型, 値のデータ型> 変数名 = new TreeMap<>();
 ```
 
 
-### HashMap
+## HashMap
+### キーと値のペアの追加
+HashMap クラスで用意されている put メソッドを使用する。<br>
+
+```Java
+Map<String,Integer> map = new HashMap<>();
+
+map.put("りんご", 80);
+map.put("ぶどう", 120);
+```
+
+また、すでに追加されているキーに対して put メソッドを使用した場合は、新たに値が更新される。<br>
+
+```Java
+Map<String,Integer> map = new HashMap<>();
+
+map.put("りんご", 80);
+System.out.println(map.get("りんご"));   // 80
+
+map.put("りんご", 100);
+System.out.println(map.get("りんご"));   // 100
+```
 
 
+### 指定したキーの値の取得
+HashMap クラスで用意されている get メソッドを使用する。<br>
+
+```Java
+Map<String,Integer> map = new HashMap<>();
+
+map.put("りんご", 80);
+System.out.println(map.get("りんご"));   // 80
+```
 
 
+### キーと値のペア数の取得
+HashMap クラスで用意されている get メソッドを使用する。<br>
+
+```Java
+Map<String,Integer> map = new HashMap<>();
+
+map.put("りんご", 80);
+map.put("ぶどう", 120);
+
+int n = map.size();
+System.out.println(n);   // 2
+```
 
 
-
-### TreeMap
+## TreeMap
 
